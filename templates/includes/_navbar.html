@@ -11,14 +11,18 @@
           {% if session.logged_in %}
           {% if session.prof == 1 %}
           <li class="nav-item "><a class="nav-link " href="/adminDash">Dashboard</a></li>
+          <li class="nav-item "><a class="nav-link " href="/adminDash">Admin</a></li>
           {% else %}
             {% if session.prof == 2 %}
               <li class="nav-item "><a class="nav-link " href="/recepDash">Dashboard</a></li>
+              <li class="nav-item "><a class="nav-link " href="/recepDash">Recption</a></li>
             {% else %}
               {% if session.prof == 3 %}
                 <li class="nav-item "><a class="nav-link " href="/trainorDash">Dashboard</a></li>
+                <li class="nav-item "><a class="nav-link " href="/trainorDash">Trainor</a></li>
               {% else %}
                 <li class="nav-item "><a class="nav-link " href="{{url_for('memberDash', username = session.username)}}">Dashboard</a></li>
+                <li class="nav-item "><a class="nav-link " href="{{url_for('memberDash', username = session.username)}}">Member</a></li>
               {% endif %}
             {% endif %}
           {% endif %}
