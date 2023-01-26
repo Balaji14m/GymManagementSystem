@@ -458,7 +458,7 @@ def deleteMember():
 @app.route('/viewDetails')
 def viewDetails():
 	cur = mysql.connection.cursor()
-	cur.execute("SELECT username FROM info WHERE username != %s", [session['username']])
+	cur.execute("SELECT username,prof FROM info WHERE username != %s", [session['username']])
 	result = cur.fetchall()
 	return render_template('viewDetails.html', result = result)
 
